@@ -79,10 +79,11 @@ while True:
         # - "q" is the the location to lookup
         # - "limit" is always 1
         # - "key" is the openweather API key, https://home.openweathermap.org/api_keys
+        key = "9c1cfdeb9c2db7f2becd1c927df2bb33"
         openweatherGeoAPIGetParameters = {
             "q": location,
             "limit": 1,
-            "appid": "9c1cfdeb9c2db7f2becd1c927df2bb33",
+            "appid": key,
         }
 
 #######################################################################################       
@@ -102,14 +103,18 @@ while True:
         # Set the lat and lng key as retuned by the OpenWeather Geocoding API in variables
         locationLat = json_data[0]["lat"] 
         locationLng = json_data[0]["lon"]
-        print("Latitude: " + str(locationLat))
-        print("Longitude: " + str(locationLng))
+        # print("Latitude: " + str(locationLat))
+        # print("Longitude: " + str(locationLng))
 
 #######################################################################################
 # 8. Prepare openweatherAPIGetParameters for OpenWeather API, https://openweathermap.org/api; current weather data for one location by geographic coordinates.
         # Use current weather data for one location by geographic coordinates API service in Openweathermap
         openweatherAPIGetParameters = {
-                                "<!!!REPLACEME!!!> with all key:value pairs of parameters!!!>"
+                                "q" : location,
+                                "limit" : 1,
+                                "lat" : locationLat,
+                                "lon" : locationLng,
+                                "appid" : key,
                             }
 
 #######################################################################################
