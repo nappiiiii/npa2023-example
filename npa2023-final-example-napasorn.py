@@ -43,9 +43,9 @@ while True:
     # Send a GET request to the Webex Teams messages API.
     # - Use the GetParameters to get only the latest message.
     # - Store the message in the "r" variable.
-    r = requests.get("<!!!REPLACEME with URL!!!>",
+    r = requests.get("https://webexapis.com/v1/messages",
                          params = GetParameters, 
-                         headers = {"Authorization": accessToken}
+                         headers = {"Authorization" : accessToken}
                     )
     # verify if the retuned HTTP status code is 200/OK
     if not r.status_code == 200:
@@ -65,11 +65,13 @@ while True:
     
     # check if the text of the message starts with the magic character "/" and yourname followed by a location name
     # e.g.  "/chotipat San Jose"
-    if message.find("<!!!REPLACEME!!!>") == 0:
+    if message.find("/napasorn") == 0:
         # extract name of a location (city) where we check for GPS coordinates using the OpenWeather Geocoding API
         # Enter code below to hold city name in location variable.
         # For example location should be "San Jose" if the message is "/chotipat San Jose".
-        location = "<!!!REPLACEME!!!>" 
+        location = message.split(" ",1)
+        location = location[1]
+        print("Location: " + location)
 
 #######################################################################################     
 # 5. Prepare openweather Geocoding APIGetParameters..
