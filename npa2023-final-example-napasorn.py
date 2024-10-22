@@ -129,8 +129,8 @@ while True:
 
 #######################################################################################
 # 10. Complete the code to get weather description and weather temperature
-        weather_desc = json_data_weather["weather"][0]["description"] # Add
-        weather_temp = json_data_weather["main"]["temp"] # Add
+        weather_desc = json_data_weather["weather"][0]["description"]
+        weather_temp = json_data_weather["main"]["temp"]
         print("Weather description: " + weather_desc)
         print("Weather temperature: " + str(weather_temp))
 
@@ -144,20 +144,20 @@ while True:
 # 12. Complete the code to post the message to the Webex Teams room.         
         # the Webex Teams HTTP headers, including the Authoriztion and Content-Type
         HTTPHeaders = { 
-                             "Authorization": <!!!REPLACEME!!!>,
+                             "Authorization": accessToken,
                              "Content-Type": "application/json"
                            }
         # The Webex Teams POST JSON data
         # - "roomId" is is ID of the selected room
         # - "text": is the responseMessage assembled above
         PostData = {
-                            "roomId": <!!!REPLACEME!!!>,
-                            "text": <!!!REPLACEME!!!>
+                            "roomId": roomIdToGetMessages,
+                            "text": responseMessage
                         }
         # Post the call to the Webex Teams message API.
-        r = requests.post( "<!!!REPLACEME with URL!!!>", 
-                              data = json.dumps(<!!!REPLACEME!!!>), 
-                              headers = <!!!REPLACEME!!!>
+        r = requests.post( "https://webexapis.com/v1/messages", 
+                              data = json.dumps(PostData, indent=4), 
+                              headers = HTTPHeaders
                          )
         if not r.status_code == 200:
             raise Exception("Incorrect reply from Webex Teams API. Status code: {}. Text: {}".format(r.status_code, r.text))
