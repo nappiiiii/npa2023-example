@@ -130,7 +130,7 @@ while True:
 #######################################################################################
 # 10. Complete the code to get weather description and weather temperature
         weather_desc = json_data_weather["weather"][0]["description"]
-        weather_temp = json_data_weather["main"]["temp"]
+        weather_temp = json_data_weather["main"]["temp"] - 273.15
         print("Weather description: " + weather_desc)
         print("Weather temperature: " + str(weather_temp))
 
