@@ -65,7 +65,7 @@ while True:
     
     # check if the text of the message starts with the magic character "/" and yourname followed by a location name
     # e.g.  "/chotipat San Jose"
-    if message.find("/napasorn") == 0:
+    if message.find("/65070115") == 0:
         # extract name of a location (city) where we check for GPS coordinates using the OpenWeather Geocoding API
         # Enter code below to hold city name in location variable.
         # For example location should be "San Jose" if the message is "/chotipat San Jose".
@@ -82,7 +82,7 @@ while True:
         openweatherGeoAPIGetParameters = {
             "q": location,
             "limit": 1,
-            "appid": "<!!!REPLACEME with your Openweather API Key!!!>",
+            "appid": "9c1cfdeb9c2db7f2becd1c927df2bb33",
         }
 
 #######################################################################################       
