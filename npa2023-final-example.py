@@ -10,8 +10,10 @@
 #######################################################################################
 # 1. Import libraries for API requests, JSON formatting, and time.
 
-<!!!REPLACEME with code for libraries>
-
+#<!!!REPLACEME with code for libraries>
+import requests
+import json
+import time
 #######################################################################################
 # 2. Assign the Webex hard-coded access token to the variable accessToken.
 
