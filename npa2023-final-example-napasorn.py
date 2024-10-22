@@ -119,7 +119,7 @@ while True:
 
 #######################################################################################
 # 9. Provide the URL to the OpenWeather API; current weather data for one location.
-        rw = requests.get("<!!!REPLACEME with URL!!!>", 
+        rw = requests.get("https://api.openweathermap.org/data/2.5/weather", 
                              params = openweatherAPIGetParameters
                         )
         json_data_weather = rw.json()
@@ -129,8 +129,10 @@ while True:
 
 #######################################################################################
 # 10. Complete the code to get weather description and weather temperature
-        weather_desc = json_data_weather["<!!!REPLACEME!!!> with path to weather description key!!!>"]
-        weather_temp = json_data_weather["<!!!REPLACEME!!!> with path to weather temperature key!!!>"]
+        weather_desc = json_data_weather["weather"][0]["description"] # Add
+        weather_temp = json_data_weather["main"]["temp"] # Add
+        print("Weather description: " + weather_desc)
+        print("Weather temperature: " + str(weather_temp))
 
 #######################################################################################
 # 11. Complete the code to format the response message.
