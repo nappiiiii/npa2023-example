@@ -1,7 +1,7 @@
 #######################################################################################
-# FirstName/Surname:
-# Student ID:
-# Github repository URL: 
+# FirstName/Surname: Napasorn Sriviroj นภสร ศรีวิโรจน์
+# Student ID: 65070115
+# Github repository URL: https://github.com/nappiiiii/npa2023-example
 #######################################################################################
 # Instruction
 # Reads README.md in https://github.com/chotipat/NPA2023-Final-Example for more information.
